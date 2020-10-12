@@ -7,6 +7,10 @@ public class CD extends Item {
 		super(title);
 		this.numberOfTracks = numberOfTracks;
 	}
+        @Override
+	public void accept(ItemVisitor v) {
+		v.visit(this);
+	}
 
 	public int getNumberOfTracks() {
 		return numberOfTracks;
@@ -18,7 +22,7 @@ public class CD extends Item {
 
 	@Override
 	public String toString() {
-		return "CD{" + super.toString() + ",numberOfTracks=" + numberOfTracks + '}';
+		return "CD{" + super.toString() + ",numberOfTracks= " + numberOfTracks + '}';
 	}
 	
 	

@@ -9,6 +9,11 @@ public class Book extends Item {
 		super(title);
 		this.author = author;
 	}
+        
+        @Override
+	public void accept(ItemVisitor v) {
+		v.visit(this);
+	}
 
 	public String getAuthor() {
 		return author;
@@ -20,7 +25,7 @@ public class Book extends Item {
 
 	@Override
 	public String toString() {
-		return "Book{" + super.toString() + ", author=" + author + '}';
+		return "Book{" + super.toString() + ", author= " + author + '}';
 	}
 	
 	

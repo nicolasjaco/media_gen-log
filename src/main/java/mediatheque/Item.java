@@ -6,6 +6,7 @@ public abstract class Item {
 	public Item(String title) {
 		this.title = title;
 	}
+        public abstract void accept(ItemVisitor v);
 
 	public String getTitle() {
 		return title;
@@ -13,7 +14,7 @@ public abstract class Item {
 
 	@Override
 	public String toString() {
-		return "title=" + title ;
+		return "title= " + title ;
 	}
 
 	public void setTitle(String title) {
